@@ -7,6 +7,10 @@ public class MongoWriter {
 	}
 	
 	public static void writeZamestnanec() {
-		
+		//TODO
+	}
+	
+	public static void writeVykazPrace() {
+		//TODO
 	}
 }
