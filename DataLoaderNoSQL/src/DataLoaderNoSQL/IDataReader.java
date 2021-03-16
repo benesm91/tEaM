@@ -2,11 +2,7 @@ package DataLoaderNoSQL;
 
 public interface IDataReader {
 	
-	public String readZamestnanec() {
-		//TODO
-	}
+	public String readZamestnanec();
 	
-	public String readVykazPrace() {
-		//TODO
-	}
+	public String readVykazPrace();
 }
