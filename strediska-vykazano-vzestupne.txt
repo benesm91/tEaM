@@ -1,0 +1,23 @@
+[{
+   $lookup:
+     {
+       from: "Zamestnanci",
+       localField: "OSOBNI_CISLO",
+       foreignField: "ICP",
+       as: "pracovnici"
+     }
+}, 
+{ 
+    $group: 
+     { 
+        _id: "$pracovnici.STREDISKO", 
+        sum: {$sum: "$POCET_VYKAZANE_HODINY"},
+     }
+    
+}
+{ 
+     $sort : 
+      { 
+	 sum : 1 
+      } 
+}]
