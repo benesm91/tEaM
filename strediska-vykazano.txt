@@ -1,4 +1,5 @@
-db.VykazyPrace.aggregate([{
+db.VykazyPrace.aggregate(
+[{
    $lookup:
      {
        from: "Zamestnanci",
@@ -6,4 +7,13 @@ db.VykazyPrace.aggregate([{
        foreignField: "ICP",
        as: "pracovnici"
      }
-}, { $group: { _id: "$pracovnici.STREDISKO", sum: {$sum: "$POCET_VYKAZANE_HODINY"}}}])
+  }, 
+  { 
+  $group: 
+     { 
+       _id: "$pracovnici.STREDISKO",
+       sum: { $sum: "$POCET_VYKAZANE_HODINY"}
+     }
+  }
+]
+)
