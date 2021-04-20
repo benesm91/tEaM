@@ -1,4 +1,3 @@
-db.VykazyPrace.aggregate(
 [{
    $lookup:
      {
@@ -16,4 +15,3 @@ db.VykazyPrace.aggregate(
      }
   }
 ]
-)
