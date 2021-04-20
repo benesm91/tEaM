@@ -1,0 +1,5 @@
+[   
+    {$match: { idMilniku: 143}},
+    {$unwind: '$vysledkyTestu'},
+    {$group: {_id: '$vysledkyTestu.stav', sum: {$sum: 1}}}
+]

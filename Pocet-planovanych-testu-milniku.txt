@@ -1,0 +1,11 @@
+[
+   {
+      $limit:20
+   },
+   {
+      $project: {
+         item: 1,
+         numberOfTests: { $cond: { if: { $isArray: "$naplanovaneTesty" }, then: { $size: "$naplanovaneTesty" }, else: "NA"} }
+      }
+   }
+]
