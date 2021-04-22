@@ -1,0 +1,5 @@
+[   
+    {$match: { system: {{system}} }},
+    {$unwind: '$vysledkyTestu'},
+    {$group: {_id: '$vysledkyTestu.stav', sum: {$sum: 1}}}
+]
