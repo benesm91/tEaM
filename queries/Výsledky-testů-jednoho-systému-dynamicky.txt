@@ -3,3 +3,4 @@
     {$unwind: '$vysledkyTestu'},
     {$group: {_id: '$vysledkyTestu.vysledek', sum: {$sum: 1}}}
 ]
+
